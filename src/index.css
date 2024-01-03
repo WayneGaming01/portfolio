@@ -1,0 +1,1022 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@100;200;300;400;500;700&family=Rubik:wght@400;500;700&family=Space+Mono&family=Ubuntu+Mono&family=Ubuntu:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+html {
+  font-family: "Ubuntu";
+  scroll-behavior: smooth !important;
+}
+
+.Toastify__progress-bar {
+  height: 3px !important;
+  background-color: #83a091;
+}
+
+.Toastify__toast-body div {
+  font-weight: 500;
+  font-family: "Ubuntu";
+}
+
+.services {
+  padding: 2rem;
+}
+
+.services-body {
+  overflow: auto;
+}
+
+.projects {
+  padding: 2rem;
+}
+
+.about {
+  padding: 2rem;
+}
+
+.about-body {
+  display: flex;
+  width: 100%;
+  height: auto;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: auto;
+}
+
+.contact {
+  padding-bottom: 2rem;
+}
+
+.contact>.section-title {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 2rem;
+}
+
+.tech-stack {
+  display: flex;
+  flex-direction: column;
+}
+
+.tech-stack span {
+  font-family: "Ubuntu";
+  font-weight: 500;
+  color: #212121;
+}
+
+.contactform {
+  height: auto;
+}
+
+.section-title {
+  margin-bottom: 15px;
+}
+
+
+.section-title {
+  font-size: 24px;
+  color: #494949;
+  font-family: "Ubuntu";
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.home {
+  height: auto;
+  width: 100%;
+  padding: 2rem;
+  z-index: 4;
+}
+
+.services-body {
+  height: auto;
+}
+
+.footer-_text {
+  font-weight: 500;
+  font-family: "Ubuntu";
+  font-size: 17px;
+  text-transform: uppercase;
+  color: #494949;
+}
+
+.footer-links li {
+  list-style-type: square;
+}
+
+.footer-link {
+  font-weight: 500;
+  font-family: "Ubuntu";
+  font-size: 17px;
+  text-transform: capitalize;
+  color: #494949;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+}
+
+li {
+  list-style-type: none;
+}
+
+.footer-links {
+  width: 50%;
+  z-index: inherit;
+  height: 100%;
+  margin-left: 50px;
+}
+
+.imageself img {
+  height: 250px;
+  max-width: 300px;
+  user-select: none;
+  -webkit-user-drag: none;
+  margin-bottom: 5px;
+}
+
+.intro-body {
+  width: 45%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+}
+
+.intro {
+  width: 100%;
+  height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.intro-text {
+  font-weight: 500;
+  font-size: 34px;
+  font-family: "DM Mono";
+  color: #121212;
+}
+
+.contact-form {
+  width: 100%;
+  height: auto;
+  padding: 2rem;
+  padding-top: 0;
+}
+
+.about-title {
+  color: #494949;
+  font-size: 26px;
+  font-family: "Ubuntu";
+  font-weight: 500;
+}
+
+.about-description {
+  color: #494949;
+  font-size: 16px;
+  font-family: "Ubuntu";
+  font-weight: 500;
+  text-align: justify;
+  word-wrap: break-word;
+}
+
+.input-text {
+  width: 100%;
+  padding: 10px 10px;
+  border-bottom: 3px solid #83a091;
+  outline: none;
+  font-weight: 500;
+  font-family: "DM Mono";
+  color: #212121;
+  border-left: 3px solid #212121;
+  border-top: 3px solid #212121;
+  border-right: 3px solid #212121;
+}
+
+.submit-button {
+  color: #121212;
+  font-family: "DM Mono";
+  font-weight: 500;
+  padding: 10px;
+  border: 3px solid #212121;
+  width: 100%;
+  color: #212121;
+  font-size: 17px;
+  transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.submit-button:hover {
+  background-color: #212121;
+  color: #fff;
+}
+
+.intro-description {
+  color: #494949;
+  font-weight: 500;
+  font-size: 17 px;
+  font-family: "Ubuntu";
+}
+
+body {
+  background-color: #fff;
+
+}
+
+.footer {
+  border-top: 1px solid #83a091;
+  z-index: 50;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-contacts {
+  width: 50%;
+  z-index: inherit;
+}
+
+.mailto-footer:hover {
+  color: #83a091;
+}
+
+.footer a {
+  font-family: "DM Mono";
+  font-weight: 500;
+  font-size: 24px;
+  transition: 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.copyright {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  background-color: #fff !important;
+}
+
+.copyright-text {
+  color: #121212;
+  font-family: "Ubuntu";
+  font-weight: 500;
+}
+
+.footer-text {
+  font-size: 32px;
+  font-weight: 400;
+  font-family: "Ubuntu";
+  color: #121212;
+}
+
+.footer-description {
+  color: #313131;
+  font-weight: 400;
+  font-family: "Inter";
+}
+
+main {
+  height: 100%;
+  width: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 0;
+  z-index: 2;
+  overflow: hidden;
+  color: #fff;
+}
+
+.title {
+  margin-left: 5rem;
+  width: 50%;
+  gap: 1rem;
+}
+
+.bars-icon {
+  display: none;
+}
+
+.title .one {
+  font-family: "Ubuntu", monospace;
+  font-weight: 500;
+  font-size: 35px;
+  text-transform: uppercase;
+  user-select: none;
+}
+
+.title .two {
+  font-family: "Ubuntu", monospace;
+  font-weight: 500;
+  font-size: 15px;
+  text-transform: uppercase;
+  user-select: none;
+}
+
+.header {
+  padding: 20px;
+  height: 105px;
+}
+
+.links-div {
+  width: 100%;
+  gap: 25px;
+  align-items: center;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 50px;
+}
+
+.links {
+  font-size: 18px;
+  font-weight: 500;
+  font-family: "Ubuntu";
+  text-transform: uppercase;
+}
+
+.links a {
+  color: #121212;
+  transition: 0.2s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+.links a:hover {
+  color: #83a091;
+}
+
+.intro-icon {
+  padding: 14px;
+  border-radius: 6px;
+  text-align: center;
+  transition: 0.2s ease-in;
+  font-weight: 500;
+  border: 2px solid #121212;
+  gap: 5px;
+  font-size: 19px;
+  color: #121212;
+}
+
+.intro-icon:hover {
+  background-color: #121212;
+  color: white;
+}
+
+.intro-icons {
+  font-size: 30px;
+}
+
+@media screen and (max-width: 1024px) {
+  .home {
+    height: 100vh;
+    width: 100%;
+    padding: 2rem;
+    z-index: 4;
+  }
+
+  .imageself img {
+    height: 350px;
+    max-width: 450px;
+    user-select: none;
+    -webkit-user-drag: none;
+    margin-bottom: 20px;
+  }
+
+  .intro-body {
+    width: 100%;
+    gap: 0;
+    flex-direction: column;
+  }
+
+  .intro {
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .intro-text {
+    font-weight: 500;
+    font-size: 36px;
+    font-family: "DM Mono";
+    color: #121212;
+    margin-bottom: 5px;
+  }
+
+  .intro-description {
+    color: #494949;
+    font-weight: 500;
+    font-size: 24px;
+    font-family: "Ubuntu";
+  }
+
+  .footer {
+    border-top: 1px solid #83a091;
+    height: 350px;
+  }
+
+  .footer-contacts {
+    width: 100%;
+    z-index: inherit;
+  }
+
+  .mailto-footer:hover {
+    color: #83a091;
+  }
+
+  .footer a {
+    font-family: "DM Mono";
+    font-weight: 500;
+    font-size: 24px;
+    color: #121212;
+    transition: 0.3s ease-out;
+  }
+
+  .copyright {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2px;
+    background-color: #fff !important;
+  }
+
+  .copyright-text {
+    color: #121212;
+    font-family: "Ubuntu";
+    font-weight: 500;
+    font-size: 14px;
+  }
+
+  .footer-text {
+    font-size: 32px;
+    font-weight: 500;
+    font-size: 34px;
+    font-family: "Ubuntu";
+    color: #121212;
+  }
+
+  .footer-description {
+    color: #313131;
+    font-weight: 500;
+    font-family: "DM Mono";
+    font-size: 21px;
+    margin-bottom: 5px;
+  }
+
+  .header {
+    height: 125px;
+  }
+
+  .title .one {
+    font-family: "Ubuntu", monospace;
+    font-weight: 500;
+    font-size: 45px;
+    text-transform: uppercase;
+    user-select: none;
+  }
+
+  .title .two {
+    font-family: "Ubuntu", monospace;
+    font-weight: 500;
+    font-size: 21px;
+    text-transform: uppercase;
+    user-select: none;
+  }
+
+  .bars-icon {
+    display: none;
+    font-size: 29px;
+    margin-right: 2rem;
+  }
+
+  .footer-contacts {
+    height: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .about-title {
+    color: #494949;
+    font-size: 19px;
+    font-family: "Ubuntu";
+    font-weight: 500;
+  }
+
+  .about-description {
+    color: #494949;
+    font-size: 13px;
+    font-family: "Ubuntu";
+    font-weight: 500;
+  }
+
+  .tech-stack span {
+    font-size: 14px;
+  }
+
+  .about-skills {
+    margin-bottom: 10px;
+  }
+
+  .section-title {
+    font-size: 19px;
+  }
+
+  .contact-form {
+    width: 100%;
+    height: auto;
+    padding: 1.5rem;
+    padding-top: 0;
+  }
+
+  .input-area textarea {
+    height: 106px !important;
+  }
+
+  .input-area {
+    margin-bottom: 1.2rem;
+  }
+
+  .input-text {
+    padding: 7px 10px;
+    font-size: 13px;
+  }
+
+  .contact-title {
+    font-family: "DM Mono";
+    font-weight: 500;
+    color: #fff;
+    font-size: 24px;
+  }
+
+  .submit-button {
+    padding: 5px;
+    font-size: 14px;
+  }
+
+  .intro-icon {
+    padding: 10px;
+    border-radius: 6px;
+    text-align: center;
+    transition: 0.2s ease-in;
+    font-weight: 500;
+    border: 2px solid #121212;
+    gap: 5px;
+    font-size: 15px;
+    color: #121212;
+  }
+
+  .footer-links {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .footer-_text {
+    font-size: 16px;
+  }
+
+  .footer-link {
+    font-size: 14px;
+  }
+
+  .intro-icons {
+    font-size: 25px;
+  }
+
+  .links-div {
+    display: none;
+  }
+
+  .home {
+    height: 90vh;
+    width: 100%;
+    padding: 2rem;
+    z-index: 4;
+  }
+
+  .imageself img {
+    height: 250px;
+    max-width: 350px;
+    user-select: none;
+    -webkit-user-drag: none;
+    margin-bottom: 20px;
+  }
+
+  .intro-body {
+    width: 100%;
+    gap: 0;
+    flex-direction: column;
+  }
+
+  .intro {
+    width: 100%;
+    height: 75vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .intro-text {
+    font-weight: 500;
+    font-size: 24px;
+    font-family: "DM Mono";
+    color: #121212;
+    margin-bottom: 10px;
+  }
+
+  .intro-description {
+    color: #494949;
+    font-weight: 500;
+    font-size: 14px;
+    font-family: "Ubuntu";
+  }
+
+  .footer {
+    border-top: 1px solid #83a091;
+    height: 235px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer-contacts {
+    width: 100%;
+    z-index: inherit;
+    margin-bottom: 15px;
+  }
+
+  .mailto-footer:hover {
+    color: #83a091;
+    transition: 0.1s ease-out;
+  }
+
+  .footer a {
+    font-family: "DM Mono";
+    font-weight: 500;
+    font-size: 17px;
+  }
+
+  .copyright {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2px;
+    background-color: #fff !important;
+  }
+
+  .copyright-text {
+    color: #121212;
+    font-family: "Ubuntu";
+    font-weight: 500;
+    font-size: 14px;
+  }
+
+  .footer-text {
+    font-size: 32px;
+    font-weight: 500;
+    font-size: 19px;
+    font-family: "Ubuntu";
+    color: #121212;
+  }
+
+  .footer-description {
+    color: #313131;
+    font-weight: 500;
+    font-family: "DM Mono";
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+
+  .header {
+    height: 75px;
+  }
+
+  .title .one {
+    font-family: "Ubuntu", monospace;
+    font-weight: 500;
+    font-size: 27px;
+    text-transform: uppercase;
+    user-select: none;
+  }
+
+  .title .two {
+    font-family: "Ubuntu", monospace;
+    font-weight: 500;
+    font-size: 14px;
+    text-transform: uppercase;
+    user-select: none;
+  }
+
+  .bars-icon {
+    display: block;
+    font-size: 19px;
+    margin-right: 0;
+  }
+
+  .title {
+    margin-left: 0;
+    gap: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 640px) {
+
+  .intro-icon {
+    padding: 10px;
+    border-radius: 6px;
+    text-align: center;
+    transition: 0.2s ease-in;
+    font-weight: 500;
+    border: 2px solid #121212;
+    gap: 5px;
+    font-size: 15px;
+    color: #121212;
+  }
+
+  .footer-links {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .footer-_text {
+    font-size: 16px;
+  }
+
+  .footer-link {
+    font-size: 14px;
+  }
+
+  .intro-icons {
+    font-size: 25px;
+  }
+
+  .links-div {
+    display: none;
+  }
+
+  .home {
+    height: 90vh;
+    width: 100%;
+    padding: 2rem;
+    z-index: 4;
+  }
+
+  .imageself img {
+    height: 250px;
+    max-width: 350px;
+    user-select: none;
+    -webkit-user-drag: none;
+    margin-bottom: 20px;
+  }
+
+  .intro-body {
+    width: 100%;
+    gap: 0;
+    flex-direction: column;
+  }
+
+  .intro {
+    width: 100%;
+    height: 65vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .intro-text {
+    font-weight: 500;
+    font-size: 24px;
+    font-family: "DM Mono";
+    color: #121212;
+    margin-bottom: 10px;
+  }
+
+  .intro-description {
+    color: #494949;
+    font-weight: 500;
+    font-size: 14px;
+    font-family: "Ubuntu";
+  }
+
+  .footer {
+    border-top: 1px solid #83a091;
+    height: 235px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer-contacts {
+    width: 100%;
+    z-index: inherit;
+    margin-bottom: 15px;
+  }
+
+  .mailto-footer:hover {
+    color: #83a091;
+    transition: 0.1s ease-out;
+  }
+
+  .footer a {
+    font-family: "DM Mono";
+    font-weight: 500;
+    font-size: 17px;
+  }
+
+  .copyright {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2px;
+    background-color: #fff !important;
+  }
+
+  .copyright-text {
+    color: #121212;
+    font-family: "Ubuntu";
+    font-weight: 500;
+    font-size: 14px;
+  }
+
+  .footer-text {
+    font-size: 32px;
+    font-weight: 500;
+    font-size: 19px;
+    font-family: "Ubuntu";
+    color: #121212;
+  }
+
+  .footer-description {
+    color: #313131;
+    font-weight: 500;
+    font-family: "DM Mono";
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+
+  .header {
+    height: 75px;
+  }
+
+  .title .one {
+    font-family: "Ubuntu", monospace;
+    font-weight: 500;
+    font-size: 27px;
+    text-transform: uppercase;
+    user-select: none;
+  }
+
+  .title .two {
+    font-family: "Ubuntu", monospace;
+    font-weight: 500;
+    font-size: 14px;
+    text-transform: uppercase;
+    user-select: none;
+  }
+
+  .bars-icon {
+    display: block;
+    font-size: 19px;
+    margin-right: 0;
+  }
+
+  .title {
+    margin-left: 0;
+    gap: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 450px) {
+
+
+  .links-div {
+    display: none;
+  }
+
+  .home {
+    height: 90vh;
+    width: 100%;
+    padding: 2rem;
+    z-index: 4;
+  }
+
+  .imageself img {
+    height: 175px;
+    max-width: 250px;
+    user-select: none;
+    -webkit-user-drag: none;
+    margin-bottom: 20px;
+  }
+
+  .intro-body {
+    width: 100%;
+    gap: 0;
+    flex-direction: column;
+  }
+
+  .intro {
+    width: 100%;
+    height: 65vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .intro-text {
+    font-weight: 500;
+    font-size: 19px;
+    font-family: "DM Mono";
+    color: #121212;
+    margin-bottom: 5px;
+  }
+
+  .intro-description {
+    color: #494949;
+    font-weight: 500;
+    font-size: 13px;
+    font-family: "Ubuntu";
+  }
+
+  .footer {
+    border-top: 1px solid #83a091;
+    height: 235px;
+    padding: 1.3rem;
+  }
+
+  .footer-contacts {
+    width: 100%;
+    z-index: inherit;
+  }
+
+  .mailto-footer:hover {
+    color: #83a091;
+    transition: 0.1s ease-out;
+  }
+
+  .footer a {
+    font-family: "DM Mono";
+    font-weight: 500;
+    font-size: 14px;
+  }
+
+  .copyright {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2px;
+    background-color: #fff !important;
+  }
+
+  .copyright-text {
+    color: #121212;
+    font-family: "Ubuntu";
+    font-weight: 500;
+    font-size: 12px;
+  }
+
+  .footer-text {
+    font-size: 32px;
+    font-weight: 500;
+    font-size: 18px;
+    font-family: "Ubuntu";
+    color: #121212;
+  }
+
+  .footer-description {
+    color: #313131;
+    font-weight: 500;
+    font-family: "DM Mono";
+    font-size: 12px;
+    margin-bottom: 5px;
+  }
+
+  .header {
+    height: 75px;
+  }
+
+  .title .one {
+    font-family: "Ubuntu", monospace;
+    font-weight: 500;
+    font-size: 21px;
+    text-transform: uppercase;
+    user-select: none;
+  }
+
+  .title .two {
+    font-family: "Ubuntu", monospace;
+    font-weight: 500;
+    font-size: 12px;
+    text-transform: uppercase;
+    user-select: none;
+  }
+
+  .bars-icon {
+    display: block;
+    font-size: 17px;
+    margin-right: 0;
+  }
+
+  .title {
+    margin-left: 0;
+    gap: 0.5rem;
+  }
+}
