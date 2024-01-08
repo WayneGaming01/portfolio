@@ -125,7 +125,7 @@ const Home = () => {
                 />
               </div>
               <div className="intro-span">
-                <h1 className="intro-text">Hi, I'm Justin aka Mui</h1>
+                <h1 className="intro-text">Hi, I'm Justin</h1>
                 <p className="intro-description mb-[10px]">
                   I'm a full-stack developer that self-taught. My love is
                   innovation and problem-solving based in Manila, Philippines.
