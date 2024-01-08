@@ -14,7 +14,7 @@ const Header = () => {
       id: 1,
       name: "Home",
       icon: <FontAwesomeIcon icon={faHome} />,
-      url: "#home",
+      url: "/",
       ID: "home-href",
     },
     {
@@ -42,11 +42,13 @@ const Header = () => {
 
   return (
     <>
-      <div className="flex items-center header bg-[#fff] w-full shadow-lg">
+      <div className="z-[101] flex fixed items-center header bg-[#fff] w-full shadow-lg">
         <div className="header-div flex justify-between items-center w-full">
           <div className="title flex items-center text-[#121212]">
             <span className="one">
-              <Link to="/">Mui</Link>
+              <Link to="/" id="home-hrefheader">
+                Mui
+              </Link>
             </span>
             <span className="two">Full-stack Developer</span>
           </div>
@@ -58,6 +60,9 @@ const Header = () => {
                 </Link>
               </li>
             ))}
+            <div className="times" id="linksTimes">
+              <FontAwesomeIcon icon={faTimes} className="times-icon" />
+            </div>
           </div>
           <div className="bars" id="headerBars">
             <FontAwesomeIcon

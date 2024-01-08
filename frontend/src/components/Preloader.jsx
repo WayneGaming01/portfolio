@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { preloader } from "../components/anims";
-import { useLocation } from "react-router-dom";
 import gsap from "gsap";
 
 const Preloader = () => {
@@ -40,7 +39,7 @@ const Preloader = () => {
   return (
     <div
       id="loading-page"
-      className="loading h-[100vh] w-full bg-[#fff] flex justify-center items-center absolute top-[0] z-[101]"
+      className="loading h-[100vh] w-full bg-[#fff] flex justify-center items-center absolute top-[0] z-[105]"
     >
       <div className="follow absolute bg-[#83a091] h-[4px] w-[0] left-[0] z-[2]"></div>
       <div

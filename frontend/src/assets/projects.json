@@ -1,0 +1,13 @@
+[
+  {
+    "id": 1,
+    "image": "/assets/project1.png",
+    "name": "Portfolio Website",
+    "date": "Jan 4, 2024",
+    "credentials": "Owner",
+    "description": "I created this website when I was 13 to showcase my projects and document my ongoing web development learning. It is simple nothing more but it's responsive and mobile friendly.",
+    "url": "https://muidev.me/",
+    "githubURL": "https://github.com/WayneGaming01/portfolio.git",
+    "stack": ["React", "CSS", "Node", "HTML"]
+  }
+]

@@ -9,13 +9,6 @@ const FooterDiv = () => {
       className: "",
       link: true,
     },
-    {
-      id: 2,
-      url: "",
-      name: "muichirooooooooooooooooooooooo - Discord",
-      className: "!normal-case !no-underline",
-      link: false,
-    },
   ];
 
   return (
@@ -37,7 +30,7 @@ const FooterDiv = () => {
             {links.map((links) => (
               <li key={links.id}>
                 {links.link ? (
-                  <Link target="_blank" to={links.url}>
+                  <Link to={links.url}>
                     <span className={"footer-link " + links.className}>
                       {links.name}
                     </span>

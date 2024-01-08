@@ -5,9 +5,24 @@ import "react-tooltip/dist/react-tooltip.css";
 import Preloader from "./components/Preloader";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import "https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js";
+import { useEffect } from "react";
 
 const App = () => {
   const location = useLocation();
+
+  useEffect(() => {
+    $.expr[":"].external = function (obj) {
+      return (
+        !obj.href.match(/^mailto\:/) &&
+        obj.hostname != location.hostname &&
+        !obj.href.match(/^javascript\:/) &&
+        !obj.href.match(/^$/)
+      );
+    };
+
+    $("a:external").attr("target", "_blank");
+  }, []);
 
   return (
     <>

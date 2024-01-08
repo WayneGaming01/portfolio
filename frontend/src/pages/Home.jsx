@@ -1,22 +1,19 @@
 import Layout from "../components/Layout";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faCircleNotch } from "@fortawesome/free-solid-svg-icons";
-import Picture from "../assets/favicon.png";
+import Picture from "../assets/profile.jpg";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import Cards from "../components/Cards";
+import axios from "axios";
 
 const Home = () => {
-  const navigate = useNavigate();
-
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
-
-  const [form, setForm] = useState({});
 
   const links = [
     {
@@ -27,9 +24,27 @@ const Home = () => {
   ];
 
   useEffect(() => {
+    document
+      .querySelector("#headerBars")
+      .addEventListener("click", function () {
+        document.querySelector(".links-div").style.top = "0";
+      });
+
+    document
+      .querySelector("#linksTimes")
+      .addEventListener("click", function () {
+        document.querySelector(".links-div").style.top = "-1200px";
+      });
+
     document.querySelector("#home-href").addEventListener("click", function () {
       document.querySelector("#home").scrollIntoView();
     });
+
+    document
+      .querySelector("#home-hrefheader")
+      .addEventListener("click", function () {
+        document.querySelector("#home").scrollIntoView();
+      });
 
     document
       .querySelector("#about-href")
@@ -54,9 +69,9 @@ const Home = () => {
     e.preventDefault();
 
     try {
-      await axios.post(
+      const res = await axios.post(
         "/contact",
-        { form },
+        { name, email, message },
         {
           headers: {
             "Content-type": "application/json",
@@ -67,29 +82,32 @@ const Home = () => {
       setMessage("");
       setName("");
       setEmail("");
-      setForm({});
 
       setLoading(true);
 
-      toast.success("Email successfully sent.");
-
       await new Promise((resolve) => setTimeout(resolve, 2000));
+      toast.success(res?.data?.data);
       setLoading(false);
-
-      navigate("/");
     } catch (err) {
+      console.log(err);
       if (!err?.response) {
         return toast.error("An error just occured, please try again later.");
       }
 
-      if (err.response?.data?.errors) {
+      if (err?.response?.data) {
         return toast.error(err.response?.data?.errors);
       }
 
-      err.response?.status === 401
-        ? toast.error("You are not authorized to use this.")
-        : toast.error(err.response?.data?.errors);
-      return;
+      if (err?.response?.status === 404) {
+        return toast.error("Server not found, try again later.");
+      }
+
+      if (err?.response?.status === 401) {
+        toast.error("You are not authorized to use this.");
+      } else {
+        toast.error(err?.response?.data?.errors);
+      }
+      return err;
     }
   };
 
@@ -115,7 +133,7 @@ const Home = () => {
                 <div className="flex flexbox items-center gap-[20px]">
                   <div className="intro-links">
                     {links.map((links) => (
-                      <Link target="_blank" to={links.url} key={links.id}>
+                      <Link to={links.url} key={links.id}>
                         <button className="intro-icon items-center flex capitalize">
                           {links.icon}
                         </button>
@@ -136,8 +154,7 @@ const Home = () => {
           <h1 className="section-title">About Me</h1>
           <div className="about-body">
             <h1 className="about-title">
-              A passionate junior full-stack developer based in Manila,
-              Philippines
+              A passionate junior full-stack developer
             </h1>
             <p className="about-description">
               I'm an intermediate-level full-stack developer with a solid grasp
@@ -153,7 +170,9 @@ const Home = () => {
         </section>
         <section className="projects" id="projects">
           <h1 className="section-title">Projects</h1>
-          <div className="projects-body"></div>
+          <div className="projects-body select-none">
+            <Cards />
+          </div>
         </section>
         <section className="contact" id="contact">
           <h1 className="section-title">Contact</h1>

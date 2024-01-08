@@ -20,6 +20,148 @@ html {
   font-family: "Ubuntu";
 }
 
+.faTimesSidebar {
+  color: #191a1c;
+  font-size: 26px;
+  cursor: pointer;
+  display: flex;
+  transition: all 0.2s;
+
+}
+
+.faTimesSidebar:hover {
+  color: #828282;
+}
+
+.cards-sidebar {
+  height: 100vh;
+  display: flex;
+  position: fixed;
+  top: 0;
+  right: -835px;
+  width: 550px;
+  flex-direction: column;
+  flex: 1;
+  background-color: #fff;
+  transition: right 0.2s;
+  padding: 20px 40px 140px;
+}
+
+.shadow-cards-bg {
+  height: 100vh;
+  top: 0;
+  left: 0;
+  position: fixed;
+  cursor: pointer;
+  width: 100%;
+  z-index: 102;
+  display: none;
+}
+
+.content-links {
+  bottom: 0;
+  position: absolute;
+  left: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  padding: 20px;
+}
+
+.content-links a {
+  margin-right: 20px;
+  background-color: #d7d7d72f;
+  padding: 15px;
+  border: 1px solid #494949;
+  border-radius: 8px;
+  transition: 0.2s ease-in;
+  color: hsl(0, 0%, 5%);
+}
+
+.content-links a:hover {
+  background-color: #74747441;
+}
+
+.content-body {
+  height: 100%;
+  width: 100%;
+}
+
+.content-body .content-title {
+  margin-bottom: 10px;
+}
+
+.content-body .content-title span {
+  font-weight: 500;
+  font-family: "Ubuntu";
+  font-size: 27px;
+  color: hsl(0, 0%, 5%);
+}
+
+.content-body .content-title p {
+  font-weight: 400;
+  color: hsla(0, 0%, 5%, 0.764);
+  font-family: "Inter";
+  font-size: 15px;
+}
+
+.content-body .content-about span {
+  font-weight: 500;
+  font-family: "Ubuntu";
+  font-size: 22px;
+  color: hsl(0, 0%, 5%);
+}
+
+.content-stack span {
+  margin-right: 7px;
+  padding: 10px;
+  background-color: #1f1f1ff9;
+  border-radius: 3px;
+}
+
+.content-stack {
+  height: 100%;
+}
+
+.content-body .content-about p {
+  font-weight: 300;
+  color: hsl(0, 0%, 5%);
+  font-family: "Inter";
+  font-size: 15px;
+  margin-bottom: 20px;
+  word-wrap: break-word;
+}
+
+.content-body .content-image img {
+  border-radius: 8px;
+  user-select: none;
+  -webkit-user-drag: none;
+  margin-bottom: 25px;
+  border: 1px solid #191a1c;
+}
+
+.sidebar-title {
+  position: relative;
+  display: flex;
+  padding: 20px 0;
+  padding-left: 10px;
+  border-bottom: 1px solid hsla(0, 0%, 13%, 0.4);
+  width: 100%;
+  gap: 20px;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.sidebar-title span {
+  font-family: "Inter";
+  font-weight: 300;
+  font-size: 21px;
+  color: #191a1c;
+  word-wrap: break-word;
+}
+
 .services {
   padding: 2rem;
 }
@@ -39,11 +181,14 @@ html {
 .about-body {
   display: flex;
   width: 100%;
-  height: auto;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   height: auto;
+}
+
+.times {
+  display: none;
 }
 
 .contact {
@@ -88,6 +233,7 @@ html {
   height: auto;
   width: 100%;
   padding: 2rem;
+  height: 100vh;
   z-index: 4;
 }
 
@@ -131,8 +277,8 @@ li {
 }
 
 .imageself img {
-  height: 250px;
-  max-width: 300px;
+  height: 350px;
+  max-width: 450px;
   user-select: none;
   -webkit-user-drag: none;
   margin-bottom: 5px;
@@ -146,6 +292,74 @@ li {
   gap: 25px;
 }
 
+.cards {
+  gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-bottom: 10px;
+}
+
+.project-card {
+  width: 100%;
+  height: 220px;
+  border-radius: 12px;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  font-family: Arial, Helvetica, sans-serif;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 300ms;
+}
+
+.project-card:hover img {
+  transform: scale(1.1);
+}
+
+.project-card:hover {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.project-card img {
+  transition: transform 300ms;
+  width: 100%;
+  z-index: 1;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-card .content {
+  box-sizing: border-box;
+  width: 100%;
+  position: absolute;
+  padding: 30px 20px 20px 20px;
+  height: auto;
+  z-index: 2;
+  bottom: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.6));
+}
+
+.project-card .date,
+.project-card .title {
+  margin: 0;
+}
+
+.project-card .date {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 4px;
+}
+
+.project-card .title {
+  font-size: 17px;
+  color: #fff;
+}
+
+.project-card .credential {
+  font-size: 15px;
+  font-weight: 500;
+  color: #dadada;
+}
+
 .intro {
   width: 100%;
   height: 85vh;
@@ -157,7 +371,7 @@ li {
 .intro-text {
   font-weight: 500;
   font-size: 34px;
-  font-family: "DM Mono";
+  font-family: "Ubuntu";
   color: #121212;
 }
 
@@ -178,8 +392,8 @@ li {
 .about-description {
   color: #494949;
   font-size: 16px;
-  font-family: "Ubuntu";
-  font-weight: 500;
+  font-family: "Inter";
+  font-weight: 400;
   text-align: justify;
   word-wrap: break-word;
 }
@@ -190,7 +404,7 @@ li {
   border-bottom: 3px solid #83a091;
   outline: none;
   font-weight: 500;
-  font-family: "DM Mono";
+  font-family: "Inter";
   color: #212121;
   border-left: 3px solid #212121;
   border-top: 3px solid #212121;
@@ -216,9 +430,9 @@ li {
 
 .intro-description {
   color: #494949;
-  font-weight: 500;
-  font-size: 17 px;
-  font-family: "Ubuntu";
+  font-weight: 400;
+  font-size: 17px;
+  font-family: "Inter";
 }
 
 body {
@@ -286,7 +500,6 @@ main {
   top: 0;
   padding: 0;
   z-index: 2;
-  overflow: hidden;
   color: #fff;
 }
 
@@ -298,6 +511,10 @@ main {
 
 .bars-icon {
   display: none;
+}
+
+.bars {
+  cursor: pointer;
 }
 
 .title .one {
@@ -368,6 +585,27 @@ main {
 }
 
 @media screen and (max-width: 1024px) {
+  .header {
+    padding: 15px;
+    height: 100px;
+  }
+
+  .section-title {
+    font-size: 20px;
+  }
+
+  .title .one {
+    font-size: 21px
+  }
+
+  .links-div a {
+    font-size: 16px;
+  }
+
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
   .home {
     height: 100vh;
     width: 100%;
@@ -376,8 +614,8 @@ main {
   }
 
   .imageself img {
-    height: 350px;
-    max-width: 450px;
+    height: 325px;
+    max-width: 350px;
     user-select: none;
     -webkit-user-drag: none;
     margin-bottom: 20px;
@@ -391,7 +629,7 @@ main {
 
   .intro {
     width: 100%;
-    height: 50vh;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -399,22 +637,22 @@ main {
 
   .intro-text {
     font-weight: 500;
-    font-size: 36px;
-    font-family: "DM Mono";
+    font-size: 27px;
+    font-family: "Ubuntu";
     color: #121212;
     margin-bottom: 5px;
   }
 
   .intro-description {
     color: #494949;
-    font-weight: 500;
-    font-size: 24px;
-    font-family: "Ubuntu";
+    font-weight: 400;
+    font-size: 18px;
+    font-family: "Inter";
   }
 
   .footer {
     border-top: 1px solid #83a091;
-    height: 350px;
+    height: 225px;
   }
 
   .footer-contacts {
@@ -429,7 +667,7 @@ main {
   .footer a {
     font-family: "DM Mono";
     font-weight: 500;
-    font-size: 24px;
+    font-size: 19px;
     color: #121212;
     transition: 0.3s ease-out;
   }
@@ -450,29 +688,24 @@ main {
   }
 
   .footer-text {
-    font-size: 32px;
+    font-size: 27px;
     font-weight: 500;
-    font-size: 34px;
     font-family: "Ubuntu";
     color: #121212;
   }
 
   .footer-description {
     color: #313131;
-    font-weight: 500;
-    font-family: "DM Mono";
-    font-size: 21px;
+    font-weight: 400;
+    font-family: "Inter";
+    font-size: 17px;
     margin-bottom: 5px;
-  }
-
-  .header {
-    height: 125px;
   }
 
   .title .one {
     font-family: "Ubuntu", monospace;
     font-weight: 500;
-    font-size: 45px;
+    font-size: 26px;
     text-transform: uppercase;
     user-select: none;
   }
@@ -480,7 +713,7 @@ main {
   .title .two {
     font-family: "Ubuntu", monospace;
     font-weight: 500;
-    font-size: 21px;
+    font-size: 15px;
     text-transform: uppercase;
     user-select: none;
   }
@@ -497,6 +730,73 @@ main {
 }
 
 @media screen and (max-width: 768px) {
+  .content-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .content-links a {
+    padding: 12px;
+  }
+
+  .links-div {
+    display: flex;
+    z-index: 104;
+    align-items: center;
+    margin-right: 0;
+    gap: 0;
+    justify-content: center;
+    height: 100vh;
+    overflow: auto;
+    width: 100%;
+    flex-direction: column;
+    background-color: #83a091;
+    position: absolute;
+    top: -1200px;
+    left: 0;
+    transition: top 0.4s;
+  }
+
+  .links-div li {
+    display: flex;
+    margin-bottom: 35px;
+  }
+
+  .links-div li a {
+    font-size: 26px;
+    color: #fff;
+    font-family: "DM Mono";
+    font-weight: 500;
+  }
+
+  .times {
+    top: 0;
+    right: 0;
+    display: flex;
+    position: absolute;
+    padding: 25px;
+    cursor: pointer;
+  }
+
+  .times .times-icon {
+    color: #fff;
+    transition: 0.2s ease-in;
+    font-size: 26px;
+  }
+
+  .times .times-icon:hover {
+    color: #212121;
+  }
+
+  .links-div li a:hover {
+    color: #212121;
+  }
+
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .about-title {
     color: #494949;
     font-size: 19px;
@@ -507,8 +807,8 @@ main {
   .about-description {
     color: #494949;
     font-size: 13px;
-    font-family: "Ubuntu";
-    font-weight: 500;
+    font-family: "Inter";
+    font-weight: 400;
   }
 
   .tech-stack span {
@@ -584,20 +884,17 @@ main {
     font-size: 25px;
   }
 
-  .links-div {
-    display: none;
-  }
-
   .home {
-    height: 90vh;
+    height: 100vh;
     width: 100%;
     padding: 2rem;
     z-index: 4;
   }
 
   .imageself img {
-    height: 250px;
-    max-width: 350px;
+    height: 350px;
+    max-width: 450px;
+    margin-top: 50px;
     user-select: none;
     -webkit-user-drag: none;
     margin-bottom: 20px;
@@ -620,16 +917,16 @@ main {
   .intro-text {
     font-weight: 500;
     font-size: 24px;
-    font-family: "DM Mono";
+    font-family: "Ubuntu";
     color: #121212;
     margin-bottom: 10px;
   }
 
   .intro-description {
     color: #494949;
-    font-weight: 500;
+    font-weight: 400;
     font-size: 14px;
-    font-family: "Ubuntu";
+    font-family: "Inter";
   }
 
   .footer {
@@ -681,8 +978,8 @@ main {
 
   .footer-description {
     color: #313131;
-    font-weight: 500;
-    font-family: "DM Mono";
+    font-weight: 400;
+    font-family: "Inter";
     font-size: 14px;
     margin-bottom: 5px;
   }
@@ -709,7 +1006,7 @@ main {
 
   .bars-icon {
     display: block;
-    font-size: 19px;
+    font-size: 23px;
     margin-right: 0;
   }
 
@@ -720,6 +1017,129 @@ main {
 }
 
 @media screen and (max-width: 640px) {
+  .content-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .content-links a {
+    padding: 12px;
+  }
+
+  .faTimesSidebar {
+    font-size: 23px;
+  }
+
+  .cards-sidebar {
+    width: 100%;
+    padding: 10px 40px 120px;
+  }
+
+  .shadow-cards-bg {
+    display: none;
+  }
+
+  .content-links {
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+  }
+
+  .content-links a {
+    padding: 12px;
+    margin-right: 12px;
+  }
+
+  .content-body .content-title span {
+    font-size: 22px;
+  }
+
+  .content-body .content-title p {
+    font-size: 14px;
+  }
+
+  .content-body .content-about span {
+    font-weight: 500;
+    font-family: "Ubuntu";
+    font-size: 20px;
+    color: hsl(0, 0%, 5%);
+  }
+
+  .content-stack span {
+    padding: 8px;
+    font-size: 16px;
+  }
+
+  .sidebar-title span {
+    font-size: 19px;
+  }
+
+  .links-div {
+    display: flex;
+    z-index: 104;
+    align-items: center;
+    margin-right: 0;
+    gap: 0;
+    justify-content: center;
+    height: 100vh;
+    overflow: auto;
+    width: 100%;
+    flex-direction: column;
+    background-color: #83a091;
+    position: absolute;
+    top: -1200px;
+    left: 0;
+    transition: top 0.4s;
+  }
+
+  .links-div li {
+    display: flex;
+    margin-bottom: 35px;
+  }
+
+  .links-div li a {
+    font-size: 26px;
+    color: #fff;
+    font-family: "DM Mono";
+    font-weight: 500;
+  }
+
+  .times {
+    top: 0;
+    right: 0;
+    display: flex;
+    position: absolute;
+    padding: 25px;
+    cursor: pointer;
+  }
+
+  .times .times-icon {
+    color: #fff;
+    transition: 0.2s ease-in;
+    font-size: 26px;
+  }
+
+  .times .times-icon:hover {
+    color: #212121;
+  }
+
+  .links-div li a:hover {
+    color: #212121;
+  }
+
+  .cards {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .project-card .content .title {
+    font-size: 15px;
+  }
+
+  .project-card .content .credential {
+    font-size: 13px;
+  }
+
 
   .intro-icon {
     padding: 10px;
@@ -750,20 +1170,16 @@ main {
     font-size: 25px;
   }
 
-  .links-div {
-    display: none;
-  }
-
   .home {
-    height: 90vh;
+    height: 100vh;
     width: 100%;
     padding: 2rem;
     z-index: 4;
   }
 
   .imageself img {
-    height: 250px;
-    max-width: 350px;
+    height: 350px;
+    max-width: 400px;
     user-select: none;
     -webkit-user-drag: none;
     margin-bottom: 20px;
@@ -777,7 +1193,7 @@ main {
 
   .intro {
     width: 100%;
-    height: 65vh;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -786,16 +1202,16 @@ main {
   .intro-text {
     font-weight: 500;
     font-size: 24px;
-    font-family: "DM Mono";
+    font-family: "Ubuntu";
     color: #121212;
     margin-bottom: 10px;
   }
 
   .intro-description {
     color: #494949;
-    font-weight: 500;
+    font-weight: 400;
     font-size: 14px;
-    font-family: "Ubuntu";
+    font-family: "Inter";
   }
 
   .footer {
@@ -847,8 +1263,8 @@ main {
 
   .footer-description {
     color: #313131;
-    font-weight: 500;
-    font-family: "DM Mono";
+    font-weight: 400;
+    font-family: "Inter";
     font-size: 14px;
     margin-bottom: 5px;
   }
@@ -875,7 +1291,7 @@ main {
 
   .bars-icon {
     display: block;
-    font-size: 19px;
+    font-size: 21px;
     margin-right: 0;
   }
 
@@ -886,22 +1302,129 @@ main {
 }
 
 @media screen and (max-width: 450px) {
+  .content-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
+  .content-links a {
+    padding: 10px;
+  }
 
-  .links-div {
+  .faTimesSidebar {
+    font-size: 23px;
+  }
+
+  .cards-sidebar {
+    width: 100%;
+    padding: 10px 20px 120px;
+  }
+
+  .shadow-cards-bg {
     display: none;
   }
 
+  .content-links {
+    justify-content: center;
+    align-items: center;
+    padding: 12px;
+  }
+
+  .content-links a {
+    padding: 10px;
+    font-size: 15px;
+    margin-right: 12px;
+  }
+
+  .content-body .content-title span {
+    font-size: 22px;
+  }
+
+  .content-body .content-title p {
+    font-size: 14px;
+  }
+
+  .content-body .content-about span {
+    font-weight: 500;
+    font-family: "Ubuntu";
+    font-size: 20px;
+    color: hsl(0, 0%, 5%);
+  }
+
+  .content-stack span {
+    padding: 8px;
+    font-size: 16px;
+  }
+
+  .sidebar-title span {
+    font-size: 19px;
+  }
+
+
+  .links-div {
+    display: flex;
+    z-index: 104;
+    align-items: center;
+    margin-right: 0;
+    gap: 0;
+    justify-content: center;
+    height: 100vh;
+    overflow: auto;
+    width: 100%;
+    flex-direction: column;
+    background-color: #83a091;
+    position: absolute;
+    top: -1200px;
+    left: 0;
+    transition: top 0.4s;
+  }
+
+  .links-div li {
+    display: flex;
+    margin-bottom: 35px;
+  }
+
+  .links-div li a {
+    font-size: 26px;
+    color: #fff;
+    font-family: "DM Mono";
+    font-weight: 500;
+  }
+
+  .times {
+    top: 0;
+    right: 0;
+    display: flex;
+    padding: 25px;
+    position: absolute;
+    cursor: pointer;
+  }
+
+  .times .times-icon {
+    color: #fff;
+    transition: 0.2s ease-in;
+    font-size: 26px;
+  }
+
+  .times .times-icon:hover {
+    color: #212121;
+  }
+
+  .links-div li a:hover {
+    color: #212121;
+  }
+
   .home {
-    height: 90vh;
+    height: 100vh;
     width: 100%;
     padding: 2rem;
     z-index: 4;
   }
 
   .imageself img {
-    height: 175px;
-    max-width: 250px;
+    height: 325px;
+    max-width: 350px;
     user-select: none;
     -webkit-user-drag: none;
     margin-bottom: 20px;
@@ -915,7 +1438,7 @@ main {
 
   .intro {
     width: 100%;
-    height: 65vh;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -924,16 +1447,16 @@ main {
   .intro-text {
     font-weight: 500;
     font-size: 19px;
-    font-family: "DM Mono";
+    font-family: "Ubuntu";
     color: #121212;
     margin-bottom: 5px;
   }
 
   .intro-description {
     color: #494949;
-    font-weight: 500;
+    font-weight: 400;
     font-size: 13px;
-    font-family: "Ubuntu";
+    font-family: "Inter";
   }
 
   .footer {
@@ -983,8 +1506,8 @@ main {
 
   .footer-description {
     color: #313131;
-    font-weight: 500;
-    font-family: "DM Mono";
+    font-weight: 400;
+    font-family: "Inter";
     font-size: 12px;
     margin-bottom: 5px;
   }

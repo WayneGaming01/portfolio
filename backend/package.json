@@ -1,0 +1,28 @@
+{
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "nodemailer": "^6.9.8",
+    "nodemon": "^3.0.2"
+  },
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Backend for muidev.me",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WayneGaming01/portfolio.git"
+  },
+  "author": "WayneGaming01",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/WayneGaming01/portfolio/issues"
+  },
+  "homepage": "https://github.com/WayneGaming01/portfolio#readme"
+}
