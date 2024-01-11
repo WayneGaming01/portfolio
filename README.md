@@ -1,2 +1,2 @@
 muidev portfolio, nothing special here. 
-![image](https://muidev.me/assets/project1.png)
+![image](https://ibb.co/Hhc0rgb)
