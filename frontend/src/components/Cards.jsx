@@ -1,12 +1,25 @@
-import Picture from "../assets/project1.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRightLong } from "@fortawesome/free-solid-svg-icons";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import json from "../assets/projects.json";
+import axios from "axios";
 
 const Cards = () => {
-  const cards = json;
+  const [cards, setCards] = useState([]);
+
+  useEffect(() => {
+    const json = async () => {
+      try {
+        const cards = await axios.get("/api/v1/projects");
+
+        setCards(cards.data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+
+    json();
+  }, []);
 
   const closeSidebar = (id) => {
     const shadowBg = document.getElementById("shadow-cards-bg-" + id);
@@ -77,9 +90,13 @@ const Cards = () => {
                   <Link to={cards.url}>
                     <button>Visit Link</button>
                   </Link>
-                  <Link to={cards.githubURL}>
-                    <button>View in Github</button>
-                  </Link>
+                  {cards.githubURL ? (
+                    <Link to={cards.githubURL}>
+                      <button>View in Github</button>
+                    </Link>
+                  ) : (
+                    ""
+                  )}
                 </div>
               </div>
             </div>

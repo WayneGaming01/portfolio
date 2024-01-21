@@ -1,15 +1,20 @@
 const nodemailer = require("nodemailer");
 const { Router } = require("express");
 const router = Router();
-const dotenv = require("dotenv");
-dotenv.config({ path: "../backend/.env" });
+
+const mail = {
+  host: "smtp.zoho.com",
+  user: "justin@muidev.me",
+  pass: "f2VQV2EpeapX",
+  recipient: "cydjustincalang@gmail.com",
+};
 
 const transporter = nodemailer.createTransport({
-  host: process.env.HOST,
+  host: mail.host,
   port: 465,
   auth: {
-    user: process.env.USER,
-    pass: process.env.PASS,
+    user: mail.user,
+    pass: mail.pass,
   },
 });
 
@@ -48,8 +53,8 @@ router.post("/contact", async (req, res, next) => {
 
     transporter
       .sendMail({
-        from: process.env.USER,
-        to: process.env.RECIPIENT,
+        from: mail.user,
+        to: mail.recipient,
         subject: `A message received from ${name} (${email})`,
         text: message,
       })

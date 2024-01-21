@@ -1,13 +1,10 @@
 const express = require("express");
 const contact = require("./src/contact");
+const api = require("./src/api");
 const app = express();
 const cors = require("cors");
 const bodyParser = require("body-parser");
-const whitelist = [
-  "https://muidev.me",
-  "http://localhost:5173",
-  "http://localhost:3000",
-];
+const whitelist = ["https://muidev.me", "http://localhost:5173"];
 const corsOptions = {
   credentials: true,
   origin: (origin, callback) => {
@@ -18,9 +15,8 @@ const corsOptions = {
     }
   },
 };
-require("dotenv").config();
 app.use(function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "http://localhost:5173");
+  res.header("Access-Control-Allow-Origin", whitelist);
   res.header("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
   res.header(
     "Access-Control-Allow-Headers",
@@ -35,12 +31,16 @@ app.use(bodyParser.json());
 app.set("view engine", "html");
 app.engine("html", require("ejs").renderFile);
 app.use(contact);
+app.use(api);
 app.use("/assets", express.static("assets"));
+app.use("/", express.static("views"));
+
+const PORT = 3000 || process.env.PORT;
 
 app.get("/", (req, res) => {
   res.render("index.html");
 });
 
-app.listen(process.env.PORT, () => {
-  console.log("Server is listening to port " + process.env.PORT);
+app.listen(PORT, () => {
+  console.log("Server is listening to port " + PORT);
 });

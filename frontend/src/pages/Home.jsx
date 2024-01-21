@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faCircleNotch } from "@fortawesome/free-solid-svg-icons";
 import Picture from "../assets/profile.jpg";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { toast } from "react-toastify";
 import Cards from "../components/Cards";
 import axios from "axios";
@@ -22,48 +22,6 @@ const Home = () => {
       url: "https://github.com/WayneGaming01",
     },
   ];
-
-  useEffect(() => {
-    document
-      .querySelector("#headerBars")
-      .addEventListener("click", function () {
-        document.querySelector(".links-div").style.top = "0";
-      });
-
-    document
-      .querySelector("#linksTimes")
-      .addEventListener("click", function () {
-        document.querySelector(".links-div").style.top = "-1200px";
-      });
-
-    document.querySelector("#home-href").addEventListener("click", function () {
-      document.querySelector("#home").scrollIntoView();
-    });
-
-    document
-      .querySelector("#home-hrefheader")
-      .addEventListener("click", function () {
-        document.querySelector("#home").scrollIntoView();
-      });
-
-    document
-      .querySelector("#about-href")
-      .addEventListener("click", function () {
-        document.querySelector("#about").scrollIntoView();
-      });
-
-    document
-      .querySelector("#projects-href")
-      .addEventListener("click", function () {
-        document.querySelector("#projects").scrollIntoView();
-      });
-
-    document
-      .querySelector("#contact-href")
-      .addEventListener("click", function () {
-        document.querySelector("#contact").scrollIntoView();
-      });
-  }, []);
 
   const submitForm = async (e) => {
     e.preventDefault();
@@ -89,7 +47,6 @@ const Home = () => {
       toast.success(res?.data?.data);
       setLoading(false);
     } catch (err) {
-      console.log(err);
       if (!err?.response) {
         return toast.error("An error just occured, please try again later.");
       }
@@ -114,7 +71,7 @@ const Home = () => {
   return (
     <>
       <Layout>
-        <section className="home" id="home">
+        <section className="home_page">
           <div className="intro">
             <div className="intro-body">
               <div className="imageself">

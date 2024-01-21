@@ -8,6 +8,17 @@
     "description": "I created this website when I was 13 to showcase my projects and document my ongoing web development learning. It is simple nothing more but it's responsive and mobile friendly.",
     "url": "https://muidev.me/",
     "githubURL": "https://github.com/WayneGaming01/portfolio.git",
-    "stack": ["React", "CSS", "Node", "HTML"]
+    "stack": ["React", "CSS", "Node", "HTML", "Tailwind"]
+  },
+  {
+    "id": 2,
+    "image": "/assets/volunteer1.png",
+    "name": "Avalon Bot",
+    "date": "Jan 18, 2024",
+    "credentials": "Volunteer, Web Developer",
+    "description": "Avalon Bot, stay tune and coming soon!",
+    "url": "https://avalonbot.xyz/",
+    "githubURL": false,
+    "stack": ["CSS", "Node", "HTML"]
   }
 ]

@@ -26,7 +26,6 @@ html {
   cursor: pointer;
   display: flex;
   transition: all 0.2s;
-
 }
 
 .faTimesSidebar:hover {
@@ -59,14 +58,14 @@ html {
 }
 
 .content-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
   bottom: 0;
   position: absolute;
   left: 0;
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  width: 100%;
-  padding: 20px;
 }
 
 .content-links a {
@@ -84,7 +83,7 @@ html {
 }
 
 .content-body {
-  height: 100%;
+  height: 100vh;
   width: 100%;
 }
 
@@ -120,9 +119,6 @@ html {
   border-radius: 3px;
 }
 
-.content-stack {
-  height: 100%;
-}
 
 .content-body .content-about p {
   font-weight: 300;
@@ -229,7 +225,7 @@ html {
   font-weight: 500;
 }
 
-.home {
+.home_page {
   height: auto;
   width: 100%;
   padding: 2rem;
@@ -494,7 +490,7 @@ body {
 
 main {
   height: 100%;
-  width: 0;
+  width: 100%;
   position: absolute;
   left: 0;
   top: 0;
@@ -606,7 +602,7 @@ main {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  .home {
+  .home_page {
     height: 100vh;
     width: 100%;
     padding: 2rem;
@@ -884,7 +880,7 @@ main {
     font-size: 25px;
   }
 
-  .home {
+  .home_page {
     height: 100vh;
     width: 100%;
     padding: 2rem;
@@ -1170,7 +1166,7 @@ main {
     font-size: 25px;
   }
 
-  .home {
+  .home_page {
     height: 100vh;
     width: 100%;
     padding: 2rem;
@@ -1415,7 +1411,7 @@ main {
     color: #212121;
   }
 
-  .home {
+  .home_page {
     height: 100vh;
     width: 100%;
     padding: 2rem;
