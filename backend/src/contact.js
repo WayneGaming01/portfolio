@@ -3,10 +3,10 @@ const { Router } = require("express");
 const router = Router();
 
 const mail = {
-  host: "smtp.zoho.com",
-  user: "justin@muidev.me",
-  pass: "f2VQV2EpeapX",
-  recipient: "cydjustincalang@gmail.com",
+  host: "",
+  user: "",
+  pass: "",
+  recipient: "",
 };
 
 const transporter = nodemailer.createTransport({
